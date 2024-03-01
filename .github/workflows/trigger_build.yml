@@ -2,8 +2,7 @@ name: 'Trigger update of CV and srvanderplas.github.io'
 
 on:
   push:
-    branches:
-      - main
+    branches: main
       
 jobs:
   trigger_workflow:
@@ -13,3 +12,27 @@ jobs:
         shell: bash
         run: |
           echo "I am workflow of cv-data"
+      - name: Trigger CV repo build
+        uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: srvanderplas
+          repo: CV
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow_file_name: publish.yml
+          ref: master
+          wait_interval: 10
+          propagate_failure: true
+          trigger_workflow: true
+          wait_workflow: true
+      - name: Trigger site repo build
+        uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: srvanderplas
+          repo: srvanderplas.github.io
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow_file_name: publish.yml
+          ref: master
+          wait_interval: 10
+          propagate_failure: true
+          trigger_workflow: true
+          wait_workflow: true
