@@ -20,10 +20,10 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           workflow_file_name: publish.yml
           ref: master
-          wait_interval: 10
-          propagate_failure: true
+          wait_interval: 100
+          propagate_failure: false
           trigger_workflow: true
-          wait_workflow: true
+          wait_workflow: false
       - name: Trigger site repo build
         uses: convictional/trigger-workflow-and-wait@v1.6.1
         with:
@@ -32,7 +32,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           workflow_file_name: publish.yml
           ref: main
-          wait_interval: 10
-          propagate_failure: true
+          wait_interval: 100
+          propagate_failure: false
           trigger_workflow: true
-          wait_workflow: true
+          wait_workflow: false
