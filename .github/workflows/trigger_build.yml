@@ -1,0 +1,15 @@
+name: 'Trigger update of CV and srvanderplas.github.io'
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  trigger_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo workflow name
+        shell: bash
+        run: |
+          echo "I am workflow of cv-data"
