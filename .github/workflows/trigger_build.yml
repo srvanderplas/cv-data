@@ -31,7 +31,7 @@ jobs:
           repo: srvanderplas.github.io
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow_file_name: publish.yml
-          ref: master
+          ref: main
           wait_interval: 10
           propagate_failure: true
           trigger_workflow: true
