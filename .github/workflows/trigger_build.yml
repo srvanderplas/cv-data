@@ -17,7 +17,7 @@ jobs:
         with:
           owner: srvanderplas
           repo: CV
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           workflow_file_name: publish.yml
           ref: master
           wait_interval: 10
@@ -29,7 +29,7 @@ jobs:
         with:
           owner: srvanderplas
           repo: srvanderplas.github.io
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           workflow_file_name: publish.yml
           ref: main
           wait_interval: 10
