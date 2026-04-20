@@ -19,7 +19,7 @@ jobs:
           repo: CV
           github_token: ${{ secrets.GH_TOKEN }}
           workflow_file_name: publish.yml
-          ref: master
+          ref: main
           wait_interval: 100
           propagate_failure: false
           trigger_workflow: true
